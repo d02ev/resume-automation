@@ -103,14 +103,11 @@ class AiService:
     logger.info(f"Job description length: {len(job_description)} characters.")
 
     system_prompt = (
-      "Task: Rewrite values in the provided resume JSON so they align strongly with "
-      "the supplied Job Description (JD) and maximize ATS relevance. Preserve exact JSON "
-      "structure and keys. Do NOT change metrics, numbers, dates, fabricate achievements, "
-      "modify null-date fields, or add/remove keys (except _issues and score). "
-      "Output only valid JSON.\n\n"
+      "Task: Rewrite values in the provided resume JSON so they align strongly with the supplied Job Description (JD), maximize ATS relevance, and follow modern resume-writing standards. Preserve exact JSON structure and keys. Do NOT change metrics, numbers, dates, fabricate achievements, modify null-date fields, or add/remove keys (except _issues and score). Output only valid JSON.\n\n"
       "Allowed: rewrite bullet points for JD alignment; add JD-relevant keywords, skills, "
       "and terminology; improve clarity and technical impact while preserving factual meaning.\n\n"
-      "ATS Score: after optimization, output a numeric field named \"score\" (0-100) "
+      "Resume Rules: Use strong action verbs and technical language; keep bullet points concise and impactful; avoid passive tone; prefer result-oriented phrasing; each bullet should start with a verb and show clear value, outcome, or impact; do not produce long paragraphs; keep bullets within typical professional resume length (~12–20 words unless necessary); avoid filler words.\n\n"
+      "ATS Score: after optimization, output a numeric field named \"score\" (0–100) "
       "representing the resume's relevance to the JD.\n\n"
       "If issues arise (unclear or missing fields), include a top-level _issues array (empty if none)."
     )
