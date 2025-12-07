@@ -12,7 +12,7 @@ class GeneratorService:
   def __init__(self, auth_service: AuthService):
     self.auth_service = auth_service
 
-  def generate_resume(self, resume_data: str, template_id: string, resume_name: str) -> str:
+  def generate_resume(self, resume_data: str, template_id: str, resume_name: str) -> str:
     log_message(logger, "Generating resume....")
     logger.info(f"Template ID: {template_id}")
     logger.info(f"Resume Name: {resume_name}")
