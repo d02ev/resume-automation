@@ -36,12 +36,12 @@ def log_step(logger: logging.Logger, step_number: int, desc: str):
 
 def log_message(logger: logging.Logger, message:str, log_type: LogType=LogType.INFO):
   if log_type.value == 1:
-    logger.info(f"Success {message}")
+    logger.info(f"{message}")
   elif log_type.value == 2:
-    logger.warning(f"Warning {message}")
+    logger.warning(f"{message}")
   elif log_type.value == 3:
-    logger.error(f"Error {message}")
+    logger.error(f"{message}")
   else:
-    logger.info(f"Info {message}")
+    logger.info(f"{message}")
 
 default_logger = setup_logger()

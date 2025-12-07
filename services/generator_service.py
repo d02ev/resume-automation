@@ -1,4 +1,4 @@
-from datetime import time
+import time
 import requests
 import json
 from typing import Dict
@@ -77,7 +77,7 @@ class GeneratorService:
 
     for attempt in range(1, max_attempts + 1):
       try:
-        logger.info(f"Attemp {attempt}/{max_attempts}...", end=" ")
+        logger.info(f"Attempt {attempt}/{max_attempts}...")
 
         response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()

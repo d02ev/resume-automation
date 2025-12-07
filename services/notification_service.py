@@ -9,7 +9,7 @@ class NotificationService:
   def __init__(self):
     self.bot_token = settings.TELEGRAM_BOT_TOKEN
     self.chat_id = settings.TELEGRAM_CHAT_ID
-    self.base_url = f"https://api.telegram.org/bit{self.bot_token}"
+    self.base_url = f"https://api.telegram.org/bot{self.bot_token}"
 
   def send_message(self, message: str, parse_mode: Optional[str] = None) -> bool:
     log_message(logger, "Sending telegram notification....")

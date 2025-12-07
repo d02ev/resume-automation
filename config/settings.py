@@ -12,8 +12,8 @@ class Settings:
   OPENAI_MODEL: str = "openai/gpt-4.1"
   TELEGRAM_BOT_TOKEN: str = os.getenv("TELEGRAM_BOT_TOKEN")
   TELEGRAM_CHAT_ID: str = os.getenv("TELEGRAM_CHAT_ID")
-  POLL_INTERVAL_SECONDS: int = os.getenv("POLL_INTERVAL_SECONDS", 30)
-  MAX_POLL_ATTEMPTS: int = os.getenv("MAX_POLL_ATTEMPTS", 20)
+  POLL_INTERVAL_SECONDS: int = int(os.getenv("POLL_INTERVAL_SECONDS", 30))
+  MAX_POLL_ATTEMPTS: int = int(os.getenv("MAX_POLL_ATTEMPTS", 20))
   DEFAULT_TEMPLATE_ID: str = os.getenv("DEFAULT_TEMPLATE_ID", "templates/resume_template.cshtml")
   DEFAULT_RESUME_NAME: str = os.getenv("DEFAULT_RESUME_NAME", "Vikramaditya_Pratap_Singh")
 

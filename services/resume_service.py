@@ -28,7 +28,7 @@ class ResumeService:
         raise ValueError("No 'data' field in API response")
 
       log_message(logger, "Resume data fetched successfully.", LogType.SUCCESS)
-      logger.debug(f"Resume data keys: {list(resume_data.key())}")
+      logger.debug(f"Resume data keys: {list(resume_data.keys())}")
 
       return resume_data
 
